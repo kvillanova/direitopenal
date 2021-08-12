@@ -1,0 +1,193 @@
+#login {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+}
+#login input {
+  padding: 10px 20px;
+  border: none;
+  text-align: center;
+}
+#login p {
+  font-size: 1.2em;
+  margin: 5px 0;
+}
+#login button {
+  width: 120px;
+  align-self: center;
+}
+header {
+  background: #000;
+  padding: 0;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  padding: 2px 20px;
+  color: white;
+  justify-content: space-between;
+}
+@media screen and (max-width: 767px) {
+  header {
+    flex-direction: column;
+    padding: 5px 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  header .right {
+    order: 1;
+  }
+  header .left {
+    order: 2;
+    justify-content: center;
+  }
+}
+header .left,
+header .right {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+header .left h2,
+header .right h2 {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 3em;
+}
+header .left > *,
+header .right > * {
+  margin: 0 5px;
+}
+header .left > a > p,
+header .right > a > p {
+  font-size: 1.5em;
+  margin: 0;
+}
+body {
+  margin: 0;
+  background: #aeaeae;
+  color: black;
+}
+h1 {
+  color: black;
+}
+#admin-perguntas {
+  counter-reset: pn1;
+  counter-reset: pn2;
+  counter-reset: pn3;
+}
+.new-pergunta {
+  width: calc(100vw - 40px);
+  max-width: 1000px;
+  background: #ccc;
+  padding: 5px 10px;
+  margin: 5px auto;
+}
+.new-pergunta.n1 {
+  background: #f9d382;
+  counter-increment: pn1;
+}
+.new-pergunta.n2 {
+  background: lightblue;
+  counter-increment: pn2;
+}
+.new-pergunta.n3 {
+  background: lightgreen;
+  counter-increment: pn3;
+}
+.new-pergunta textarea {
+  width: 100%;
+  border: none;
+  padding: 10px 20px;
+  resize: vertical;
+  min-height: 42px;
+  overflow-y: hidden;
+}
+.new-pergunta input {
+  width: 100%;
+  border: none;
+  padding: 10px 20px;
+}
+.new-pergunta p {
+  margin: 3px 0;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.new-pergunta select {
+  padding: 10px 5px;
+  text-align-last: center;
+}
+.new-pergunta .cabecalho {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-between;
+}
+.new-pergunta.n1 .cabecalho .left > p::after {
+  content: counter(pn1) " - Amarelo";
+}
+.new-pergunta.n2 .cabecalho .left > p::after {
+  content: counter(pn2) " - Azul";
+}
+.new-pergunta.n3 .cabecalho .left > p::after {
+  content: counter(pn3) " - Verde";
+}
+.new-pergunta .alternativas {
+  counter-reset: alternativas;
+}
+.new-pergunta .add-alternativa {
+  font-size: 0.8em;
+  color: #333;
+  cursor: pointer;
+}
+.new-pergunta .alternativa {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  margin: 5px 0;
+  align-items: center;
+}
+.new-pergunta .alternativa input[type=radio] {
+  display: none;
+}
+.new-pergunta .alternativa > * {
+  margin: 0 3px;
+}
+.new-pergunta .alternativa p.letra::before {
+  counter-increment: alternativas;
+  content: counter(alternativas, upper-alpha);
+}
+.new-pergunta .alternativa .letra,
+.new-pergunta .alternativa label {
+  cursor: pointer;
+}
+#add-pergunta {
+  width: calc(100vw - 40px);
+  background: #ccc;
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 8px 0;
+}
+#add-pergunta p {
+  margin: 0;
+}
+#add-pergunta:hover {
+  cursor: pointer;
+  background: #333;
+  color: white;
+}
+button.salvar {
+  margin: 30px auto;
+}

@@ -1,0 +1,199 @@
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCv6KVjbNBYlgoC1CzTtw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgo6eA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCv6KVjbNBYlgoCjC3Ttw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCv6KVjbNBYlgoCxCvTtw.ttf) format('truetype');
+}
+body {
+  background: #111;
+  color: white;
+  text-align: center;
+}
+html * {
+  font-family: 'Ubuntu', sans-serif;
+}
+h1 {
+  font-size: 3em;
+  margin: 20px 0;
+}
+h2 {
+  margin: 10px 0;
+}
+#perguntas {
+  display: grid;
+  -ms-display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 456px;
+  grid-gap: 3px;
+  width: calc(100vw - 20px);
+  margin: 0 auto;
+}
+#perguntas .pergunta {
+  width: 100%;
+  background-color: #dedede;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+#perguntas .pergunta.n1 {
+  background: #f9d382;
+}
+#perguntas .pergunta.n1.perguntada {
+  background: #2d2002;
+  opacity: 0.5;
+}
+#perguntas .pergunta.n2 {
+  background: lightblue;
+}
+#perguntas .pergunta.n2.perguntada {
+  background: #0b1d23;
+  opacity: 0.5;
+}
+#perguntas .pergunta.n3 {
+  background: lightgreen;
+}
+#perguntas .pergunta.n3.perguntada {
+  background: #031603;
+  opacity: 0.5;
+}
+#perguntas .pergunta:after {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+#perguntas .pergunta p {
+  margin: 0;
+  color: black;
+  font-size: 2em;
+  align-self: center;
+}
+@media screen and (min-width: 600px) {
+  #perguntas .pergunta p {
+    font-size: 3em;
+  }
+}
+#alternativas {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  grid-gap: 3px;
+  width: calc(100vw - 20px);
+  margin: 0 auto;
+  counter-reset: alternativas;
+}
+#alternativas .alternativa {
+  background: #555;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  padding: 15px 5px;
+}
+#alternativas .alternativa.selecionada {
+  background: #ccc;
+  color: black;
+}
+#alternativas .alternativa:not(.correta),
+#alternativas .alternativa:not(.errada),
+#alternativas .alternativa:not(.gabarito),
+#alternativas .alternativa:not(.normal) {
+  cursor: pointer;
+}
+#alternativas .alternativa.correta {
+  background-color: darkgreen;
+}
+#alternativas .alternativa.errada {
+  background-color: darkred;
+}
+#alternativas .alternativa.gabarito {
+  background-color: lightgreen;
+  color: black;
+}
+#alternativas .alternativa * {
+  margin: 0 5px;
+}
+#alternativas .alternativa input {
+  display: none;
+}
+#alternativas .alternativa p {
+  text-align: justify;
+  text-align-last: left;
+}
+#alternativas .alternativa p::before {
+  counter-increment: alternativas;
+  content: counter(alternativas, upper-alpha) ") ";
+}
+button {
+  padding: 10px 20px;
+  background: black;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  margin: 10px 0 0;
+  font-size: 1.2em;
+}
+a {
+  color: white !important;
+  text-decoration: none;
+}
+a:hover {
+  color: #ccc;
+  text-decoration: underline;
+}
+p.pergunta,
+p.enunciado {
+  max-width: 800px;
+  margin: 10px auto;
+  width: calc(100vw - 20px);
+  text-align: justify;
+  text-align-last: left;
+  font-size: 1.3em;
+}
+p.pergunta {
+  font-weight: 500;
+}
+p.enunciado {
+  font-weight: 300;
+}
+h1.n1 {
+  color: #f9d382;
+}
+h1.n2 {
+  color: lightblue;
+}
+h1.n3 {
+  color: lightgreen;
+}

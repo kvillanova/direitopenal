@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^(\d+)-(\d+)$ index.php?n=$1&p=$2 [L]
